@@ -6,6 +6,30 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js" integrity="sha256-hSzapznWRy/aOZkctlN03an9DxCLlN8ZCQS0lxntiHg=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
+
+	<script type="template-x" class="colorTemplate">
+		<ul>
+			{{#each templateData}}
+				<li>{{this}}</li>
+			{{/each}}
+		</ul>
+
+		{{#each template}}
+
+		<ul>
+			<li>Make: {{this.make}}</li>
+			<li>Model: {{this.model}}</li>
+			<li>Color: {{this.color}}</li>
+			<li>Price: R{{this.price}}</li>
+			<li>Reg: {{this.reg_number}}</li>
+
+		</ul>
+		{{/each}}
+
+	</script>
+
 </head>
 <body>
 
@@ -18,6 +42,7 @@
 
 	<h2>Brands</h2>
 	<div class="brands">
+		
 
 	</div>
 
@@ -25,5 +50,6 @@
 	<div class="cars">
 
 	</div>
+	<script src="app.js"></script>
 </body>
 </html>
