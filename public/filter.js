@@ -30,14 +30,21 @@ chooseColorElem.addEventListener("change", function(myColors) {
 chooseBrandElem.addEventListener("change", function(myBrands) {
     makesValues = myBrands.target.value;
 })
-btnElem.addEventListener("click", function() {
+
+const carOfColorBrands = ()=>{
     axios.get(`http://api-tutor.herokuapp.com/v1/cars/make/${makesValues}/color/${colorsValues}`)
-.then(function(result){
-    carsOutputElem.innerHTML = colorTemplete({template:result.data})
-})
+    .then(function(result){
+        carsOutputElem.innerHTML = colorTemplete({template:result.data})
+    })
+}
+// btnElem.addEventListener("click", function() {
+//     axios.get(`http://api-tutor.herokuapp.com/v1/cars/make/${makesValues}/color/${colorsValues}`)
+// .then(function(result){
+//     carsOutputElem.innerHTML = colorTemplete({template:result.data})
+// })
 
     
-})
+// })
 
 // const carOfColorBrands = () =>{
 //     var chooseColorElem = colorValuesElem.value;
@@ -46,4 +53,4 @@ btnElem.addEventListener("click", function() {
 
 // }
 
-// btnElem.addEventListener('click', carOfColorBrands);
+btnElem.addEventListener('click', carOfColorBrands);
